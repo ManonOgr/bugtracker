@@ -1,0 +1,88 @@
+/*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+
+@charset "utf-8";
+
+html {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-image: url(bg-01.jpg);
+  background-size: cover;
+}
+
+/*form index.html and signin.html*/
+
+.profile-image-pic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.cardbody-color {
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.btn {
+  border-radius: 20px;
+  background-color: #9395d3 !important;
+}
+
+.form-text a {
+  color: #9395d3;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+table {
+  margin-top: 90px;
+}
+
+/*Nav bar */
+
+nav {
+  background-color: #000807 !important;
+}
+
+nav a,
+nav p {
+  color: #ffffff !important;
+}
+
+.btnnav {
+  border-radius: 20px;
+  background-color: #9395d3;
+  border: none;
+  width: 110px;
+}
+
+/*home.html*/
+
+table {
+  backdrop-filter: blur(10px);
+}
+
+th {
+  color: #6622cc;
+}
+
+td {
+  color: #ffffff;
+}
+
+/*Formulaire*/
+
+form {
+  backdrop-filter: blur(10px);
+}
