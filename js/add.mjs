@@ -33,9 +33,11 @@ submitBtn.addEventListener("click", (event)=>{
         .then(res => {
             if (res.data.result.status == "done") {
                 alert("Bug ajouté")
+                document.location.href = "./home.html";
             }else{
                 alert("Bug non ajouté")
             }
+
         })
         .catch(err => alert(err.message))
     }
