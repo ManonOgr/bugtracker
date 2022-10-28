@@ -49,6 +49,9 @@ table {
   margin-top: 90px;
 }
 
+.breack{
+  word-break: breack-all;
+}
 /*Nav bar */
 
 nav {

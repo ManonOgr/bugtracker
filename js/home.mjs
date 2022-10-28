@@ -63,7 +63,7 @@ export async function list(token, usersList){
       
 tbody.innerHTML +=
 `<tr>
-<td>${val.title} </br> ${val.description}</td>
+<td class="breack">${val.title} </br> ${val.description}</td>
 <td>${new Date(val.timestamp*1000).toLocaleDateString()}</td>
 <td>${usersList[val.user_id]}</td>
 <td> <select>
