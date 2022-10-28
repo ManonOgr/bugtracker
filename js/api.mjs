@@ -108,3 +108,16 @@ export async function logout(token) {
       console.log(error);
     });
 }
+
+export async function updatestate(token, bug_id, new_state){
+  return await axios
+    .get(`http://greenvelvet.alwaysdata.net/bugTracker/api/state/${token}/${bug_id}/${new_state}`)
+    .then(function (response) {
+      console.log(response);
+return response
+    })
+    .catch(function (error) {
+      console.log(error);
+      return error.response
+    });
+}

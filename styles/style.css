@@ -37,7 +37,7 @@ body {
   background-color: #9395d3 !important;
 }
 
-.form-text a {
+.form-text a , .asignup{
   color: #9395d3;
 }
 
@@ -45,13 +45,6 @@ a {
   text-decoration: none !important;
 }
 
-table {
-  margin-top: 90px;
-}
-
-.breack{
-  word-break: breack-all;
-}
 /*Nav bar */
 
 nav {
@@ -73,7 +66,11 @@ nav p {
 /*home.html*/
 
 table {
-  backdrop-filter: blur(10px);
+  margin-top: 90px;
+}
+
+.breack{
+  word-break: break-all;
 }
 
 th {
@@ -83,6 +80,8 @@ th {
 td {
   color: #ffffff;
 }
+
+
 
 /*Formulaire*/
 

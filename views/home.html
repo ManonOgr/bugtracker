@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="../styles/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../styles/style.css" />
 
     <title>Document</title>
   </head>
@@ -23,7 +23,7 @@
     "
   >
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light px-5">
         <a class="navbar-brand" href="#">BUG TRACKER</a>
         <button
           class="navbar-toggler"
@@ -38,15 +38,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="home.html">Liste complète</a>
+            <a class="nav-item nav-link active" href="home.html"
+              >Liste complète</a
+            >
             <a class="nav-item nav-link" href="#">A Traiter</a>
 
             <button class="btnnav">
               <a class="nav-item nav-link" href="formulaire.html">Ajouter</a>
             </button>
-            <button id="logout" class="btnnav">
-              Déconnexion
-            </button>
+            <button id="logout" class="btnnav">Déconnexion</button>
           </div>
         </div>
         <p class="txtbug" class="navbar-brand"></p>
@@ -54,8 +54,8 @@
         <p class="txtbugall" class="navbar-brand"></p>
       </nav>
     </header>
-    <main>
-      <table class="table table-hover">
+    <main id="main" class="px-5 mt-5">
+      <table class="table table-dark px-5">
         <thead>
           <tr>
             <th scope="col">Désignation</th>
@@ -65,9 +65,13 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody>
-        </tbody>
+        <tbody></tbody>
       </table>
+      <dialog>
+        <p>Voulez-vous supprimer le bug?</p>
+        <button id="dlgdelete">Supprimer</button>
+        <button id="dlgcancel">Annuler</button>
+      </dialog>
     </main>
     <script type="module" src="../js/api.mjs"></script>
     <script type="module" src="../js/home.mjs"></script>
