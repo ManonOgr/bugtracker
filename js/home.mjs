@@ -20,7 +20,7 @@ export async function users(token){
 const tbody = document.querySelector("tbody");
 
 tbody?.addEventListener("click", (event) => {
-    if (event.target.id = "delete") {
+    if (event.target.id == "delete") {
         const bugId = event.target.value
 
       
@@ -82,7 +82,8 @@ export async function list(token, usersList){
       <td class="breack">${val.title} </br> ${val.description}</td>
       <td>${new Date(val.timestamp*1000).toLocaleDateString()}</td>
       <td>${usersList[val.user_id]}</td>
-      <td> <select>
+      <td> 
+      <select>
       <option value"0" ${val.state == 0?"selected" :""}>A traiter</option>
       <option value"1" ${val.state == 1?"selected" :""}>En cours</option>
       <option value"2" ${val.state == 2?"selected" :""}>Traité</option>
