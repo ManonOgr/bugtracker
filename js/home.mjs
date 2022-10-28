@@ -5,18 +5,15 @@ import { getTokenStorage, getUserIdStorage } from "./storage.js";
 let bugList = [];
 let usersL = [];
 export async function users(token) {
-  console.log("efierfhiu");
   return await axios
     .get(
       `http://greenvelvet.alwaysdata.net/bugTracker/api/users/${token}
   `
     )
     .then(function (response) {
-      console.log(response);
       return response;
     })
     .catch(function (error) {
-      console.log(error);
     });
 }
 
@@ -24,15 +21,6 @@ const tbody = document.querySelector("tbody");
 
 tbody?.addEventListener("click", (event) => {
   if (event.target.id == "delete") {
-    const bugId = event.target.value;
-
-    const token = getTokenStorage();
-    // del(token, bugId).then((res) => {
-    //   if (res.data.result.status == "done") {
-    //     bugList = bugList.filter((bug) => bug.id != bugId);
-    //     generateBugList(bugList, usersL);
-    //   }
-    // });
   }
 });
 
@@ -56,7 +44,6 @@ tbody?.addEventListener("change", (event) => {
 });
 export async function list(token, usersList) {
   usersL = usersList;
-  console.log("ola");
   const currentPage = window.location.href.split("/").reverse()[0].split(".")[0];
   const user_id = getUserIdStorage();
 
@@ -66,34 +53,29 @@ export async function list(token, usersList) {
     `
     )
     .then(function (response) {
-      console.log(response);
 
       bugList = response.data.result.bug;
       generateBugList(bugList, usersList);
       modalEvent(bugList, usersList);
     })
     .catch(function (error) {
-      console.log(error);
     });
 }
 
 export async function userlist(token, usersList) {
   usersL = usersList;
-  console.log("ola");
   return await axios
     .get(
       `http://greenvelvet.alwaysdata.net/bugTracker/api/list/${token}/0
     `
     )
     .then(function (response) {
-      console.log(response);
 
       bugList = response.data.result.bug;
       generateBugList(bugList, usersList);
       modalEvent(bugList, usersList);
     })
     .catch(function (error) {
-      console.log(error);
     });
 }
 
@@ -149,7 +131,6 @@ function modalEvent(bugList, userL) {
   const list = bugList;
   const listuser = userL;
   let bugId;
-  console.log(bugList);
   button.forEach((btn) => {
     btn?.addEventListener("click", (e) => {
       bugId = e.target.value;
