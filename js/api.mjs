@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const deco = document.getElementById("logout");
-  deco.addEventListener("click", () => {
+  deco?.addEventListener("click", () => {
     console.log("logout");
     logout();
     console.log("chat");

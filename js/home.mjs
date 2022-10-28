@@ -19,7 +19,7 @@ export async function users(token){
 
 const tbody = document.querySelector("tbody");
 
-tbody.addEventListener("click", (event) => {
+tbody?.addEventListener("click", (event) => {
     if (event.target.id = "delete") {
         const bugId = event.target.value
 
