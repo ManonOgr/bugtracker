@@ -68,6 +68,7 @@ export async function signup(e, user_name, password) {
         console.log(response);
         setLocalStorage("token", response.data.result.token);
         setLocalStorage("id", response.data.result.id);
+        document.location.href = "/rendu/index.html";
       }
     })
     .catch(function (error) {
