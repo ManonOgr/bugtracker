@@ -37,7 +37,8 @@ body {
   background-color: #9395d3 !important;
 }
 
-.form-text a , .asignup{
+.form-text a,
+.asignup {
   color: #9395d3;
 }
 
@@ -69,7 +70,7 @@ table {
   margin-top: 90px;
 }
 
-.breack{
+.breack {
   word-break: break-all;
 }
 
@@ -80,8 +81,6 @@ th {
 td {
   color: #ffffff;
 }
-
-
 
 /*Formulaire*/
 

@@ -8,12 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
   let password;
 
   const token = getTokenStorage();
-  users(token)
-  .then(res => {
+  users(token).then((res) => {
     const usersList = res.data.result.user;
-    list(token,usersList );
-  })
-  
+    list(token, usersList);
+  });
 
   const username = document.getElementById("username");
   username?.addEventListener("keyup", (e) => {
@@ -62,9 +60,6 @@ export async function signup(e, user_name, password) {
         console.log(response.data.result.status);
         txterror.innerHTML = `<p style='color: red'>${response.data.result.message}</p>`;
       } else {
-        //  (response.data.result.status == "done") {
-        //     console.log(response.data.result.status);
-        //     txterror.innerHTML = `<p style='color: green'>${response.data.result.message}</p>`;
         console.log(response);
         setLocalStorage("token", response.data.result.token);
         setLocalStorage("id", response.data.result.id);
@@ -110,15 +105,17 @@ export async function logout(token) {
     });
 }
 
-export async function updatestate(token, bug_id, new_state){
+export async function updatestate(token, bug_id, new_state) {
   return await axios
-    .get(`http://greenvelvet.alwaysdata.net/bugTracker/api/state/${token}/${bug_id}/${new_state}`)
+    .get(
+      `http://greenvelvet.alwaysdata.net/bugTracker/api/state/${token}/${bug_id}/${new_state}`
+    )
     .then(function (response) {
       console.log(response);
-return response
+      return response;
     })
     .catch(function (error) {
       console.log(error);
-      return error.response
+      return error.response;
     });
 }

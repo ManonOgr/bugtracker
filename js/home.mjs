@@ -2,7 +2,6 @@ import { updatestate } from "./api.mjs";
 import { del } from "./delete.mjs";
 import { getTokenStorage } from "./storage.js";
 
-
 let bugList = [];
 let usersL = [];
 export async function users(token) {
@@ -38,22 +37,21 @@ tbody?.addEventListener("click", (event) => {
 });
 
 tbody?.addEventListener("change", (event) => {
-
   if (event.target.id == "selectstate") {
     const bugId = event.target.dataset.bugId;
     const newState = event.target.value;
     const token = getTokenStorage();
     updatestate(token, bugId, newState)
-    .then(res =>{
-      if (res.data.result.status == "done") {
-    alert("bug a jour")
-         }else{
-           alert("bug non a jour")
-         }
-    })
-    .catch(error =>{
-      alert(error.message)
-    })
+      .then((res) => {
+        if (res.data.result.status == "done") {
+          alert("bug a jour");
+        } else {
+          alert("bug non a jour");
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   }
 });
 export async function list(token, usersList) {
@@ -130,18 +128,18 @@ function modalEvent(bugList, userL) {
   let bugId;
   console.log(bugList);
   button.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+    btn?.addEventListener("click", (e) => {
       bugId = e.target.value;
       dialog.showModal();
     });
   });
-  modalDelete.addEventListener("click", () => {
+  modalDelete?.addEventListener("click", () => {
     deleteFromTable(token, bugId, list, listuser);
-    dialog.close()
+    dialog.close();
   });
-  modalClose.addEventListener('click',()=>{
-    dialog.close()
-  })
+  modalClose?.addEventListener("click", () => {
+    dialog.close();
+  });
 }
 
 async function deleteFromTable(token, bugId, bugList, userNameList) {
