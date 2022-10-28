@@ -1,19 +1,16 @@
 import { getTokenStorage, getUserIdStorage } from "./storage.js";
 
 export async function adddesc(token, user_id, newBug) {
-  console.log("ola");
   return await axios
     .post(
       `http://greenvelvet.alwaysdata.net/bugTracker/api/add/${token}/${user_id}`,
       newBug
     )
     .then(function (response) {
-      console.log(response);
       return response;
     })
     .catch(function (error) {
       return error.response;
-      console.log(error);
     });
 }
 

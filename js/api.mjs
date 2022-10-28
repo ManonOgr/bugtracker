@@ -16,11 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const username = document.getElementById("username");
   username?.addEventListener("keyup", (e) => {
     user_name = e.target.value;
-    console.log(e.target.value);
 
     const psw = document.getElementById("psw1");
     psw.addEventListener("keyup", (e) => {
-      console.log(e.target.value);
       password = e.target.value;
     });
   });
@@ -33,15 +31,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const formlogin = document.getElementById("formlogin");
   formlogin?.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("hello");
     login(e, user_name, password);
   });
 
   const deco = document.getElementById("logout");
   deco?.addEventListener("click", () => {
-    console.log("logout");
     logout();
-    console.log("chat");
   });
 });
 
@@ -53,14 +48,10 @@ export async function signup(e, user_name, password) {
       {}
     )
     .then(function (response) {
-      console.log(response);
       let txterror = document.getElementById("error");
-      console.log(txterror);
       if (response.data.result.status == "failure") {
-        console.log(response.data.result.status);
         txterror.innerHTML = `<p style='color: red'>${response.data.result.message}</p>`;
       } else {
-        console.log(response);
         setLocalStorage("token", response.data.result.token);
         setLocalStorage("id", response.data.result.id);
         document.location.href = "/rendu/index.html";
@@ -72,7 +63,6 @@ export async function signup(e, user_name, password) {
 }
 
 export async function login(e, user_name, password) {
-  console.log("bonjour");
   e.preventDefault();
   return await axios
     .get(
@@ -80,28 +70,23 @@ export async function login(e, user_name, password) {
       {}
     )
     .then(function (response) {
-      console.log(response);
       setLocalStorage("token", response.data.result.token);
       setLocalStorage("id", response.data.result.id);
       document.location.href = "./views/home.html";
     })
     .catch(function (error) {
-      console.log(error);
     });
 }
 
 export async function logout(token) {
-  console.log("ola");
   return await axios
     .get(`http://greenvelvet.alwaysdata.net/bugTracker/api/logout/${token}`, {})
     .then(function (response) {
-      console.log(response);
       removeLocalStorage("id");
       removeLocalStorage("token");
       document.location.href = "../index.html";
     })
     .catch(function (error) {
-      console.log(error);
     });
 }
 
@@ -111,11 +96,9 @@ export async function updatestate(token, bug_id, new_state) {
       `http://greenvelvet.alwaysdata.net/bugTracker/api/state/${token}/${bug_id}/${new_state}`
     )
     .then(function (response) {
-      console.log(response);
       return response;
     })
     .catch(function (error) {
-      console.log(error);
       return error.response;
     });
 }

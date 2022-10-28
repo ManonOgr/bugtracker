@@ -1,6 +1,6 @@
 import { updatestate } from "./api.mjs";
 import { del } from "./delete.mjs";
-import { getTokenStorage } from "./storage.js";
+import { getTokenStorage, getUserIdStorage } from "./storage.js";
 
 let bugList = [];
 let usersL = [];
@@ -55,6 +55,29 @@ tbody?.addEventListener("change", (event) => {
   }
 });
 export async function list(token, usersList) {
+  usersL = usersList;
+  console.log("ola");
+  const currentPage = window.location.href.split("/").reverse()[0].split(".")[0];
+  const user_id = getUserIdStorage();
+
+  return await axios
+    .get(
+      `http://greenvelvet.alwaysdata.net/bugTracker/api/list/${token}/${currentPage == "traitement"  ? user_id : "0"}
+    `
+    )
+    .then(function (response) {
+      console.log(response);
+
+      bugList = response.data.result.bug;
+      generateBugList(bugList, usersList);
+      modalEvent(bugList, usersList);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+export async function userlist(token, usersList) {
   usersL = usersList;
   console.log("ola");
   return await axios
