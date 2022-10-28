@@ -57,24 +57,44 @@ export async function list(token, usersList){
 
   function generateBugList(arr, usersList) {
     let tbody = document.querySelector('tbody')
-    tbody.innerHTML = "";
 
-    arr.map((val) =>{
-      
-tbody.innerHTML +=
-`<tr>
-<td class="breack">${val.title} </br> ${val.description}</td>
-<td>${new Date(val.timestamp*1000).toLocaleDateString()}</td>
-<td>${usersList[val.user_id]}</td>
-<td> <select>
-<option value"0" ${val.state == 0?"selected" :""}>A traiter</option>
-<option value"1" ${val.state == 1?"selected" :""}>En cours</option>
-<option value"2" ${val.state == 2?"selected" :""}>Traité</option>
- </select>
-${val.state}</td>
-<td> <button id="delete" value="${val.id}"> supprimer</button> </td>
-</tr>`
+    let buginprogress = 0;
+    let bugdone = 0;
+    let bugall = arr.length
+
+    if (tbody) {
+
+      tbody.innerHTML = "";
+
+      arr.map((val) =>{
+        if (val.state == 1) {
+          buginprogress++;
+        }
+
+        if (val.state == 2) {
+          bugdone++
+        }
 
 
-    })
+
+      tbody.innerHTML +=
+      `<tr>
+      <td class="breack">${val.title} </br> ${val.description}</td>
+      <td>${new Date(val.timestamp*1000).toLocaleDateString()}</td>
+      <td>${usersList[val.user_id]}</td>
+      <td> <select>
+      <option value"0" ${val.state == 0?"selected" :""}>A traiter</option>
+      <option value"1" ${val.state == 1?"selected" :""}>En cours</option>
+      <option value"2" ${val.state == 2?"selected" :""}>Traité</option>
+      </select>
+      ${val.state}</td>
+      <td> <button id="delete" value="${val.id}"> supprimer</button> </td>
+      </tr>`
+  
+  
+      })
+      document.querySelector(".txtbug").innerHTML = "bugs en cours " + buginprogress
+      document.querySelector(".txtbugdone").innerHTML = "bugs traités " + bugdone
+      document.querySelector(".txtbugall").innerHTML = "tous les bugs " + bugall
+    }
   }
