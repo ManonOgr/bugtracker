@@ -80,7 +80,10 @@ export async function list(token, usersList){
       tbody.innerHTML +=
       `<tr>
       <td class="breack">${val.title} </br> ${val.description}</td>
-      <td>${new Date(val.timestamp*1000).toLocaleDateString()}</td>
+      <td>${new Intl.DateTimeFormat("fr-FR", {
+        dateStyle: "full",
+        timeStyle: "medium",
+      }).format(val.timestamp * 1000)}</td>
       <td>${usersList[val.user_id]}</td>
       <td> 
       <select>
