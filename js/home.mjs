@@ -111,15 +111,15 @@ function generateBugList(arr, usersList) {
       <option value="1" ${val.state == 1 ? "selected" : ""}>En cours</option>
       <option value="2" ${val.state == 2 ? "selected" : ""}>Traité</option>
       </select></td>
-      <td> <button id="delete" class="btndelete" value="${
+      <td> <button id="delete" class="btndelete btn btn-outline-danger"" value="${
         val.id
       }"> supprimer</button> </td>
       </tr>`;
     });
     document.querySelector(".txtbug").innerHTML =
-      "bugs en cours " + buginprogress;
-    document.querySelector(".txtbugdone").innerHTML = "bugs traités " + bugdone;
-    document.querySelector(".txtbugall").innerHTML = "tous les bugs " + bugall;
+      "bugs en cours : " + buginprogress;
+    document.querySelector(".txtbugdone").innerHTML = "bugs traités : " + bugdone;
+    document.querySelector(".txtbugall").innerHTML = "tous les bugs : " + bugall;
   }
 }
 function modalEvent(bugList, userL) {

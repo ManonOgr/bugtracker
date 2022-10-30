@@ -62,14 +62,31 @@ nav p {
   background-color: #9395d3;
   border: none;
   width: 110px;
+  text-align: center;
+  color: #ffffff;
 }
 
-/*home.html*/
-
-table {
-  margin-top: 90px;
+.containertxtbug{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center ;
 }
 
+.containertxtbug p{
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/*home.html and traitement.html*/
+
+.bodyform{
+  background-color: #a5a5a5;
+}
+
+.titlebug{
+  font-weight: bold;
+}
 .breack {
   word-break: break-all;
 }
@@ -82,8 +99,30 @@ td {
   color: #ffffff;
 }
 
+#selectstate{
+  border-radius: 20px;
+}
+
+td button{
+background-color: none !important;
+}
+
 /*Formulaire*/
 
-form {
-  backdrop-filter: blur(10px);
+label{
+  color: #ffffff;
+}
+
+.btnsubmit{
+border-radius: 20px;
+background-color: #9395d3;
+color: #ffffff;
+width: 150px;
+}
+
+@media screen and (max-width: 1024px){
+
+ .containertxtbug{
+display: none;
+ }
 }

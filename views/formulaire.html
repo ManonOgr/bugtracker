@@ -23,7 +23,7 @@
     "
   >
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">BUG TRACKER</a>
         <button
           class="navbar-toggler"
@@ -47,18 +47,21 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="mx-5">
       <form>
-        <input
-          class="form-control mt-5"
+
+        <div class="form-group mt-5">
+          <label for="title" class="mt-5">Titre</label>
+          <input
+          class="form-control"
           id="title"
           type="text"
           placeholder="Default input"
         />
-
-        <div class="form-group mt-5">
+  
+          <label for="description" class="mt-5">Description</label>
           <textarea class="form-control" id="description" rows="3"></textarea>
-          <button type="submit" class="btnsubmit">Sauvegarder</button>
+          <button type="submit" class="btnsubmit mt-5">Sauvegarder</button>
         </div>
       </form>
     </main>
