@@ -74,8 +74,7 @@ export async function login(e, user_name, password) {
       setLocalStorage("id", response.data.result.id);
       document.location.href = "./views/home.html";
     })
-    .catch(function (error) {
-    });
+    .catch(function (error) {});
 }
 
 export async function logout(token) {
@@ -86,8 +85,7 @@ export async function logout(token) {
       removeLocalStorage("token");
       document.location.href = "../index.html";
     })
-    .catch(function (error) {
-    });
+    .catch(function (error) {});
 }
 
 export async function updatestate(token, bug_id, new_state) {

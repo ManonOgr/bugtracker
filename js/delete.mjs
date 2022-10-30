@@ -6,6 +6,5 @@ export async function del(token, bugId) {
     .then(function (response) {
       return response;
     })
-    .catch(function (error) {
-    });
+    .catch(function (error) {});
 }

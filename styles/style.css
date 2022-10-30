@@ -66,25 +66,25 @@ nav p {
   color: #ffffff;
 }
 
-.containertxtbug{
+.containertxtbug {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
 }
 
-.containertxtbug p{
+.containertxtbug p {
   margin-top: 10px;
   padding: 5px;
 }
 
 /*home.html and traitement.html*/
 
-.bodyform{
+.bodyform {
   background-color: #a5a5a5;
 }
 
-.titlebug{
+.titlebug {
   font-weight: bold;
 }
 .breack {
@@ -99,30 +99,29 @@ td {
   color: #ffffff;
 }
 
-#selectstate{
+#selectstate {
   border-radius: 20px;
 }
 
-td button{
-background-color: none !important;
+td button {
+  background-color: none !important;
 }
 
 /*Formulaire*/
 
-label{
+label {
   color: #ffffff;
 }
 
-.btnsubmit{
-border-radius: 20px;
-background-color: #9395d3;
-color: #ffffff;
-width: 150px;
+.btnsubmit {
+  border-radius: 20px;
+  background-color: #9395d3;
+  color: #ffffff;
+  width: 150px;
 }
 
-@media screen and (max-width: 1024px){
-
- .containertxtbug{
-display: none;
- }
+@media screen and (max-width: 1024px) {
+  .containertxtbug {
+    display: none;
+  }
 }

@@ -13,8 +13,7 @@ export async function users(token) {
     .then(function (response) {
       return response;
     })
-    .catch(function (error) {
-    });
+    .catch(function (error) {});
 }
 
 const tbody = document.querySelector("tbody");
@@ -44,22 +43,25 @@ tbody?.addEventListener("change", (event) => {
 });
 export async function list(token, usersList) {
   usersL = usersList;
-  const currentPage = window.location.href.split("/").reverse()[0].split(".")[0];
+  const currentPage = window.location.href
+    .split("/")
+    .reverse()[0]
+    .split(".")[0];
   const user_id = getUserIdStorage();
 
   return await axios
     .get(
-      `http://greenvelvet.alwaysdata.net/bugTracker/api/list/${token}/${currentPage == "traitement"  ? user_id : "0"}
+      `http://greenvelvet.alwaysdata.net/bugTracker/api/list/${token}/${
+        currentPage == "traitement" ? user_id : "0"
+      }
     `
     )
     .then(function (response) {
-
       bugList = response.data.result.bug;
       generateBugList(bugList, usersList);
       modalEvent(bugList, usersList);
     })
-    .catch(function (error) {
-    });
+    .catch(function (error) {});
 }
 
 export async function userlist(token, usersList) {
@@ -70,13 +72,11 @@ export async function userlist(token, usersList) {
     `
     )
     .then(function (response) {
-
       bugList = response.data.result.bug;
       generateBugList(bugList, usersList);
       modalEvent(bugList, usersList);
     })
-    .catch(function (error) {
-    });
+    .catch(function (error) {});
 }
 
 function generateBugList(arr, usersList) {
@@ -118,8 +118,10 @@ function generateBugList(arr, usersList) {
     });
     document.querySelector(".txtbug").innerHTML =
       "bugs en cours : " + buginprogress;
-    document.querySelector(".txtbugdone").innerHTML = "bugs traités : " + bugdone;
-    document.querySelector(".txtbugall").innerHTML = "tous les bugs : " + bugall;
+    document.querySelector(".txtbugdone").innerHTML =
+      "bugs traités : " + bugdone;
+    document.querySelector(".txtbugall").innerHTML =
+      "tous les bugs : " + bugall;
   }
 }
 function modalEvent(bugList, userL) {
